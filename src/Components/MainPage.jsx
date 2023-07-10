@@ -1,8 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import salad from "../Images/salad.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faLocationDot,faCircleChevronDown} from "@fortawesome/free-solid-svg-icons";
+import {
+  faLocationDot,
+  faCircleChevronDown,
+} from "@fortawesome/free-solid-svg-icons";
 import main from "../Images/main.png";
 import tok from "../Images/tok.jpg";
 import biryani from "../Images/biryani.jpg";
@@ -16,8 +19,22 @@ import Footer from "./Footer";
 import Restaurants from "./Restaurants";
 
 const MainPage = () => {
+  const [items, setitems] = useState();
   const [visible, setVisible] = useState(false);
-
+  const [displayrecipe, setDisplayrecipe] = useState();
+  const [data, setData] = useState(null);
+  useEffect(() => {
+    fetchData();
+  }, []);
+  const fetchData = async () => {
+    const response = await fetch("https://localhost:7053/api/Location");
+    if (response.ok) {
+      const jsonData = await response.json();
+      setitems(JSON.stringify(jsonData, null, 2));
+    } else {
+      console.error("Error:", response.status);
+    }
+  };
   const handleLoginClick = () => {
     setVisible(!visible);
   };
@@ -26,6 +43,9 @@ const MainPage = () => {
     setVisible(!visible);
   };
 
+  const handlerecipeclick = () => {};
+
+  const handlelocchange = () => {};
   return (
     <div className="MainPage">
       <div className="Nav">
@@ -36,9 +56,11 @@ const MainPage = () => {
         <button onClick={handleLoginClick}>Login/Signup</button>
         <div className="navbtns">
           <p>Home</p>
-          <Link to='/orders'><p>Orders</p></Link>
+          <Link to="/orders">
+            <p>Orders</p>
+          </Link>
           <p>Profile</p>
-          <p>Logout</p  >
+          <p>Logout</p>
         </div>
       </div>
       <div className={visible ? "logindiv" : "logindiv invisible"}>
@@ -82,13 +104,20 @@ const MainPage = () => {
           </h1>
           <p style={{ fontWeight: "bolder" }}>Delicious foods to your door!!</p>
           <div className="locInfo">
-            <div className="locationBar">
-              <p>
-                {" "}
-                <FontAwesomeIcon icon={faLocationDot} /> &nbsp; Choose a
-                location
-              </p>
-              <FontAwesomeIcon icon={faCircleChevronDown} />
+            <div className="locanddd">
+              <div className="locationBar">
+                <p>
+                  <FontAwesomeIcon icon={faLocationDot} /> &nbsp; Choose a
+                  location
+                </p>
+                <FontAwesomeIcon
+                  onClick={handlelocchange}
+                  icon={faCircleChevronDown}
+                />
+              </div>
+              <div className="locdropdown">
+                  <p>qeqewjh</p>
+              </div>
             </div>
             <button>Find Restaurants</button>
           </div>
@@ -104,39 +133,53 @@ const MainPage = () => {
           <img src={tok} alt="" />
           <p>More than</p>
           <h1>200+ recipes</h1>
-          <button>See recipes</button>
+          <Link to="/Orders">
+            <button onClick={handlerecipeclick}>See recipes</button>
+          </Link>
         </div>
         <div className="types">
-          <div className="type">
-            <img src={biryani} alt="" />
-            <h3>Main Course</h3>
-            <p>1 Recipe</p>
-          </div>
-          <div className="type">
-            <img src={pizza} alt="" />
-            <h3>Snacks</h3>
-            <p>1 Recipe</p>
-          </div>
-          <div className="type">
-            <img src={healthy} alt="" />
-            <h3>Salads</h3>
-            <p>1 Recipe</p>
-          </div>
-          <div className="type">
-            <img src={chinese} alt="" />
-            <h3>Chinese</h3>
-            <p>1 Recipe</p>
-          </div>
-          <div className="type">
-            <img src={dessert} alt="" />
-            <h3>Desserts</h3>
-            <p>1 Recipe</p>
-          </div>
-          <div className="type">
-            <img src={breakfast} alt="" />
-            <h3>Tiffins</h3>
-            <p>1 Recipe</p>
-          </div>
+          <Link to="/Orders">
+            <div className="type">
+              <img src={biryani} alt="" />
+              <h3>Main Course</h3>
+              <p>1 Recipe</p>
+            </div>
+          </Link>
+          <Link to="/Orders">
+            <div className="type">
+              <img src={pizza} alt="" />
+              <h3>Starters</h3>
+              <p>1 Recipe</p>
+            </div>
+          </Link>
+          <Link to="/Orders">
+            <div className="type">
+              <img src={healthy} alt="" />
+              <h3>Salads</h3>
+              <p>1 Recipe</p>
+            </div>
+          </Link>
+          <Link to="/Orders">
+            <div className="type">
+              <img src={chinese} alt="" />
+              <h3>Chinese</h3>
+              <p>1 Recipe</p>
+            </div>
+          </Link>
+          <Link to="/Orders">
+            <div className="type">
+              <img src={dessert} alt="" />
+              <h3>Desserts</h3>
+              <p>1 Recipe</p>
+            </div>
+          </Link>
+          <Link to="/Orders">
+            <div className="type">
+              <img src={breakfast} alt="" />
+              <h3>Tiffins</h3>
+              <p>1 Recipe</p>
+            </div>
+          </Link>
         </div>
       </div>
 

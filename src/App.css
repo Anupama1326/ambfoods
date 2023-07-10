@@ -125,6 +125,7 @@
   background-color: #3ebc74;
   color: white;
   cursor: pointer;
+  height: 40px;
 }
 
 .headleft {
@@ -346,12 +347,19 @@
   margin: 0;
   font-size: 12px;
 }
+.ordercards{
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin: 25px;
+}
 
 .Cards {
   display: flex;
   align-items: center;
   justify-content: center;
   align-items: center;
+  
 }
 .loginleft {
   display: flex;
@@ -390,7 +398,11 @@
   outline: none;
   background-color: rgba(0, 0, 0, 0.1);
 }
-
+.locanddd{
+  display: flex;
+  flex-direction: column;
+  
+}
 .Orders{
   background-color: #e2eeeb;
   height: 100vh;
