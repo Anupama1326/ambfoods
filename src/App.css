@@ -1,38 +1,447 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ubuntu:ital,wght@0,300;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
+
+* {
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.Nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 120px;
+}
+.Nav button {
+  width: 120px;
+  height: 30px;
+  text-decoration: none;
+  border-radius: 10px;
+  background-color: white;
+  border: none;
+  font-size: 12px;
+  font-weight: bold;
+  cursor: pointer;
+  
+}
+.navbtns{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #3ebc74;
+  
+}
+.navbtns p{
+  margin-left: 25px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 500;
+}
+.MainPage {
+  background-color: #e2eeeb;
+  position: relative;
+}
+.logindiv {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background-color: #3ebc74;
+  left: 60vh;
+  top: 10vh;
+  z-index: 1;
+  border-radius: 25px;
+  
+}
+.cross {
+  position: relative;
+}
+.crossclose {
+  position: absolute;
+  left: 460px;
+  top: 12px;
+  background-color: #e2eeeb;
+  border-radius: 50%;
+  width: 15px;
+  height: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2px;
+  font-size: 10px;
+  color: black;
+  cursor: pointer;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.invisible {
+  display: none;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.restaurants {
+  background-color: #eceeed;
+  height: 50vh;
+}
+
+.navlogo {
+  display: flex;
+  align-items: center;
+}
+
+.navlogo img {
+  height: 40px;
+  width: auto;
+  margin-right: 10px;
+}
+
+.locationSelect {
+  padding: 10px 20px;
+  border: none;
+  outline: none;
+  width: 300px;
+  border-radius: 10px;
+}
+
+.locationBar {
+  height: 40px;
+  width: 250px;
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  border-radius: 10px;
+  color: rgba(0, 0, 0, 0.6);
+  font-size: small;
+  margin-right: 20px;
+}
+
+.locInfo {
+  display: flex;
+}
+
+.locInfo button {
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #3ebc74;
+  color: white;
+  cursor: pointer;
+}
+
+.headleft {
+  width: 50%;
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  height: 70vh;
+  padding: 120px;
+  padding-right: 70px;
+}
+
+.HeaderBlock {
+  display: flex;
+}
+
+.headRight {
+  width: 50%;
+  padding-left: 50px;
+}
+.headRight img {
+  width: 85%;
+}
+
+/*=======================Type BLock======================*/
+
+.typeBlock {
+  display: flex;
+  justify-content: center;
+  z-index: 1;
+  margin-top: -80px;
+  margin-left: 120px;
+  margin-right: 50px;
+}
+
+.tok {
+  width: 462px;
+  height: 462px;
+  position: relative;
+}
+.tok p {
+  position: absolute;
+  left: 25px;
+  top: 250px;
+  color: white;
+}
+.tok h1 {
+  position: absolute;
+  left: 25px;
+  top: 270px;
+  color: white;
+}
+.tok button {
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  background-color: #3ebc74;
+  color: white;
+  cursor: pointer;
+  position: absolute;
+  left: 25px;
+  top: 350px;
+}
+
+.types {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.type {
+  width: 220px;
+  height: 220px;
+  margin-bottom: 20px;
+  margin-left: 30px;
+  border-radius: 20px;
+  position: relative;
+  cursor: pointer;
+}
+.type h3 {
+  position: absolute;
+  top: 120px;
+  padding: 20px;
+  color: white;
+}
+.type p {
+  position: absolute;
+  top: 150px;
+  padding: 20px;
+  color: white;
+}
+.type img {
+  width: 220px;
+  height: 220px;
+  border-radius: 20px;
+}
+
+.tok img {
+  width: 282.337px;
+  height: 462px;
+  border-radius: 20px;
+}
+
+.service {
+  background-color: #eceeed;
+  height: 50vh;
+}
+.headserv {
+  padding: 12px;
+  text-align: center;
+}
+.headserv p {
+  margin: 0;
+}
+.headserv h3 {
+  margin: 2px;
+  font-size: 20px;
+}
+
+.servcards {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  padding: 25px;
+}
+.servcard {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 33%;
+  padding: 0px 50px;
+  text-align: center;
+}
+.servcard img {
+  height: 70px;
+  width: 70px;
+}
+
+.servcard h3 {
+  padding-top: 12px;
+  margin: 0;
+}
+.servcard p {
+  margin: 0;
+  padding-top: 12px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.footer {
+  height: 50vh;
+  background-color: #eceeed;
+  background-image: url("./Images/footerbg.png");
+  background-size: cover;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.leftfoot {
+  padding: 50px 0px 0px 50px;
+  width: 25%;
+}
+.icons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-top: 12px;
+}
+.leftfoot p {
+  font-size: 12px;
+  padding-top: 10px;
+}
+.icons img {
+  height: 20px;
+  width: 20px;
+  margin-right: 2px;
+  cursor: pointer;
+}
+.centfoot {
+  width: 25%;
+}
+
+.centfoot img {
+  height: 270px;
+  padding-top: 30px;
+}
+
+.rigfoot {
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.rigfoot h3 {
+  margin: 0;
+  margin-bottom: 12px;
+}
+.rigfoot p {
+  margin: 1px;
+}
+
+.headingorder {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+.headingorder h2 {
+  margin: 0;
+  font-size: 30px;
+  
+}
+
+.headingorder p {
+  margin: 0;
+  font-size: 12px;
+}
+
+.Cards {
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+}
+.loginleft {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding-left: 120px;
+  padding-right: 70px;
+  padding-top: 60px;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.alreadyUser {
+  color: #eceeed;
+}
+.username {
+  margin: 10px 0;
+  width: 80%;
+  padding: 10px;
+
+  border-radius: 5px;
+
+  border: none;
+
+  outline: none;
+
+  background-color: rgba(0, 0, 0, 0.1);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.password {
+  margin: 10px 0;
+  width: 80%;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.Orders{
+  background-color: #e2eeeb;
+  height: 100vh;
+}
+
+/* ordercards */
+.ordercards{
+  display: flex;
+  
+}
+.card {
+  width: 295px;
+  overflow: hidden;
+  border-radius: 25px;
+  margin: 10px;
+  background-color: white;
+  box-shadow: 5px 5px 15px 5px #eceeed;
+}
+
+.card__image {
+  position: relative;
+  height: 140px;
+}
+.card__image > img {
+  max-width: 100%;
+  border-bottom-right-radius: 30px;
+  transform: rotate(10deg) translate(-15px, -55px);
+  position: absolute;
+  height: 200px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.card__info {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding: 0px 30px 20px 30px;
+}
+.card__info h3 {
+  font-size: 18px;
+  font-weight: 700;
+}
+.card__info p {
+  font-size: 14px;
+  font-weight: 600;
+}
+.card__info--price {
+  text-align: right;
+  color: orangered;
+}
+.checked {
+  color: #ffd700;
 }
